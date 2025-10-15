@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>灯泡开关演示</title>
+    <style>
+        body {
+            background: linear-gradient(120deg, #f0f4f8 0%, #c9e7fa 100%);
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+        }
+        .container {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 40px 32px 32px 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #2196f3;
+            margin-bottom: 24px;
+        }
+        #lightimage {
+            width: 120px;
+            height: 120px;
+            margin: 24px 0;
+            transition: box-shadow 0.3s;
+            box-shadow: 0 2px 12px rgba(33,150,243,0.12);
+            border-radius: 50%;
+            background: #e3f2fd;
+        }
+        button {
+            background: #2196f3;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 28px;
+            margin: 0 12px;
+            font-size: 1.1em;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+            transition: background 0.2s, transform 0.2s;
+        }
+        button:hover {
+            background: #1769aa;
+            transform: translateY(-2px) scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>灯泡开关演示</h1>
+        <img src="light-off.png" id="lightimage" alt="灯泡">
+        <div>
+            <button id="turnOn">开灯</button>
+            <button id="turnOff">关灯</button>
+        </div>
+    </div>
+
+</body>
+<script>
+    var turnOn = document.getElementById("turnOn");
+    var turnOff = document.getElementById("turnOff");
+    var img = document.getElementById("lightimage");
+    turnOn.onclick = function() {
+        img.src = "light-on.png";
+    };
+    turnOff.onclick = function() {
+        img.src = "light-off.png";
+    };
+</script>
+</html>
